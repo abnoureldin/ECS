@@ -12,6 +12,10 @@ basket_2 = {'Baked Beans': 2,
 			'Biscuits': 1,
 			'Sardines' : 2}
 
+basket_3 = {'Shampoo (Large)' : 3,
+			'Shampoo (Medium)' : 1,
+			'Shampoo (Small)': 2}
+
 """
 OFFERS
 Baked Beans: buy 2 get 1 free
@@ -45,6 +49,12 @@ def baked_beans(purchased, buy=2, free=1):
     buy_individual = purchased % pack
     return buy * buy_packs + buy_individual
 
+def shampoo(purchased, buy=3, free=1):
+    pack = buy + free
+    buy_packs = purchased // pack
+    buy_individual = purchased % pack
+    return buy * buy_packs + buy_individual
+
 
 def offers(basket):
 	d = {}
@@ -55,6 +65,9 @@ def offers(basket):
 		elif item == 'Sardines':
 			qty = qty*0.75
 			d.update({item:qty})
+		elif 'Shampoo' in item:
+			qty = shampoo(qty)
+			d.update({item:qty})
 		else:
 			d.update({item:qty})		
 	return d
@@ -64,7 +77,8 @@ def offers(basket):
 
 
 print(basket(basket_1),'\n')
-print(basket(basket_2))
+print(basket(basket_2),'\n')
+print(basket(basket_3))
 
 
 
