@@ -50,7 +50,7 @@ def baked_beans(purchased, buy=2, free=1):
     return buy * buy_packs + buy_individual
 
 def shampoo(purchased, buy=3, free=1):
-    pack = buy + free
+    pack = buy - free
     buy_packs = purchased // pack
     buy_individual = purchased % pack
     return buy * buy_packs + buy_individual
