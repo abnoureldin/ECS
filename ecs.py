@@ -53,7 +53,7 @@ def shampoo(purchased, buy=3, free=1):
     pack = buy - free
     buy_packs = purchased // pack
     buy_individual = purchased % pack
-    return buy * buy_packs + buy_individual
+    return buy_packs + buy_individual
 
 
 def offers(basket):
