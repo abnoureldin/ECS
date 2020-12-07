@@ -75,13 +75,11 @@ def offers(basket):
 
 
 
+
 if __name__ == "__main__":
-	print("Basket 1 ")
-	basket(basket_1)
-	print("\nBasket 2")
-	basket(basket_2)
-	print("\nBasket 3")
-	basket(basket_3)
+	print(basket(basket_1))
+	print(basket(basket_2))
+	print(basket(basket_3))
 
 
 
